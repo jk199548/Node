@@ -9,14 +9,14 @@ const UserDao = {
 		//new一个User模块实例，将用户信息（userinfo）作为参数传入,在调用save方法实现保存;
 	},
 	updata(condition,userinfo){
-		//更新用户信息
+		
 	},
 	remove(condition){
-		//删除用户信息
+		
 	},
 	find(condition){
-		//查找用户信息
-		return User.find(condition);
+		//查找订单信息
+		
 	}
 };
 

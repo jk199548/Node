@@ -51,6 +51,7 @@
         </div>
         <!--账单表格 样式和供应商公用-->
         <table class="providerTable table-bordered" cellpadding="0" cellspacing="0" style="width: 1650px;text-align: center;">
+            <thead>
             <tr class="firstTr">
                 <th width="10%">账单编号</th>
                 <th width="10%">商品名称</th>
@@ -61,7 +62,7 @@
                 <th width="10%">是否付款</th>
                 <th width="10%">创建时间</th>
                 <th width="20%">操作</th>
-            </tr>
+            </tr></thead>
             <tbody></tbody>
             <!--<tr>
                 <td>1</td>
@@ -176,28 +177,28 @@
 	        <form class="add-pos-form">
 	          <div class="form-group">
 			    <label for="addPosCompany">商品名称</label>
-			    <input type="text" class="form-control" name="company" id="addPosCompany" placeholder="请输入商品名称">
+			    <input type="text" class="form-control" name="shangping" id="addPosCompany" placeholder="请输入商品名称">
 			  </div>
 			  
 			  <div class="form-group">
 			    <label for="addPosName">商品单位</label>
-			    <input type="text" class="form-control" name="name" id="addPosName" placeholder="请输入商品单位">
+			    <input type="text" class="form-control" name="danwei" id="addPosName" placeholder="请输入商品单位">
 			  </div>
 			  <div class="form-group">
 			    <label for="addPosSalary">商品数量</label>
-			    <input type="text" class="form-control" name="salary" id="addPosSalary" placeholder="请输入商品数量">
+			    <input type="text" class="form-control" name="shuliang" id="addPosSalary" placeholder="请输入商品数量">
 			  </div>
 			  <div class="form-group">
 			    <label for="addPosAddress">总金额</label>
-			    <input type="text" class="form-control" name="address" id="addPosAddress" placeholder="请输入总金额">
+			    <input type="text" class="form-control" name="jine" id="addPosAddress" placeholder="请输入总金额">
 			  </div>
 			  <div class="form-group">
 			    <label for="addPosAddress">供应商</label>
-			    <input type="text" class="form-control" name="address" id="addPosAddress" placeholder="请输入供应商">
+			    <input type="text" class="form-control" name="gys" id="addPosAddress" placeholder="请输入供应商">
 			  </div>
 			  <div class="form-group">
 			    <label for="addPosAddress">是否付款</label>
-			    <input type="text" class="form-control" name="address" id="addPosAddress" placeholder="请输入">
+			    <input type="text" class="form-control" name="fukuan" id="addPosAddress" placeholder="请输入">
 			  </div>
 			  
 			</form>
