@@ -1,0 +1,44 @@
+.box{ position: absolute;
+	    top: 0;
+	    bottom: 0;
+	    left: 0;
+	    right: 0;
+	    margin: auto;
+	    
+	    
+      
+}
+.box form{
+	position: absolute;
+	    top: 0;
+	    bottom: 0;
+	    left: 0;
+	    right: 0;
+	    margin: auto;
+	    height: 139px;
+	    width: 100%;
+}
+.box form .form-control1{
+	margin-bottom: 20px;
+}
+.box form .form-control1{
+	padding-left: 10px;
+	margin-left: 10px;
+	border-style: none;
+	width: 240px;
+	height: 32px;
+	border-radius: 8px;
+}
+.box form .form-control2{
+	margin-bottom: 20px;
+}
+.box form .form-control2{
+	padding-left: 10px;
+	margin-left: 26px;
+	border-style: none;
+	width: 240px;
+	height: 32px;
+	border-radius: 8px;
+}
+.box form .login{margin-left: 62px;width: 54px;height: 34px;background: #54a4d7;color: white;border-style: none;border: 1px solid black;border-radius: 5px;cursor: pointer;}
+.box form .reset{margin-left: 12px;width: 54px;height: 34px;background: #54a4d7;color: white;border-style: none;border: 1px solid black;border-radius: 5px;cursor: pointer;}

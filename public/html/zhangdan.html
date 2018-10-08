@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>首页</title>		
+		<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/index.css" />		
+	</head>
+	<body>		
+	<header></header>
+	<div class="content" style="width: 100%;height: 520px;">
+	<div class="left-nav">
+		<ul>
+			<li class="li1"><a href="../index.html">功能列表</a></li>
+			<li class="li2"><a>账单管理</a></li>
+			<li class="li3"><a href="gys.html">供应商管理</a></li>
+			<li class="li4"><a>用户管理</a></li>
+			<li class="li5"><a>密码修改</a></li>
+			<li class="li6"><a>退出系统</a></li>
+		</ul>
+	</div>
+	
+	
+	<div class="right">
+        <div class="location" style="background: #f8f8f8 url(../imgs/home.png) no-repeat 25px 4px;position: relative;">
+            <strong style="font-weight: normal;position: absolute;left: 50px;top: 4px;">你现在所在的位置是:</strong>
+            <span style="position: absolute;left: 185px;top: 4px;">账单管理页面</span>
+        </div>
+        <div class="search">
+            <span style="position: absolute;left: 15px;top:10px;" >商品名称：</span>
+            <input type="text" placeholder="请输入商品的名称" style="position: absolute;left: 85px;top: 10px;border:1px solid #CCCCCC;border-radius: 4px;"/>
+            
+            <span style="position: absolute;left: 270px;top: 10px;">供应商：</span>
+            <select name="tigong" style="position: absolute;left: 336px;top: 10px;">
+                <option value="">--请选择--</option>
+                <option value="">北京市粮油总公司</option>
+                <option value="">邯郸市五得利面粉厂</option>
+            </select>
+
+            <span style="position: absolute;left: 500px;top: 10px;">是否付款：</span>
+            <select name="fukuan" style="position: absolute;left: 570px;top: 10px;">
+                <option value="">--请选择--</option>
+                <option value="">已付款</option>
+                <option value="">未付款</option>
+            </select>
+
+            <input type="button" value="查询"/ style="color:white;width:100px;height:32px;position: absolute;left: 672px;top: 10px;background: #92c609 url(../imgs/search.png) no-repeat 15px ;border-style: none;border-radius: 4px;">
+            <!--点击出现添加订单页面-->
+            <a href="#" data-toggle="modal" data-target="#addzdModal" style="position: absolute;left: 1000px;top: 10px;width: 120px;height: 32px;border-style: none;background: #47acf1 url(../imgs/tianjia.png) no-repeat left;color: white;border-radius: 4px;text-align: center;padding-top: 6px;">添加订单</a>
+        </div>
+        <!--账单表格 样式和供应商公用-->
+        <table class="providerTable table-bordered" cellpadding="0" cellspacing="0" style="width: 1650px;text-align: center;">
+            <tr class="firstTr">
+                <th width="10%">账单编号</th>
+                <th width="10%">商品名称</th>
+                <th width="10%">商品单位</th>
+                <th width="10%">供应商</th>
+                <th width="10%">数量</th>
+                <th width="10%">账单金额</th>
+                <th width="10%">是否付款</th>
+                <th width="10%">创建时间</th>
+                <th width="20%">操作</th>
+            </tr>
+            <tbody></tbody>
+            <!--<tr>
+                <td>1</td>
+                <td>商品</td>
+                <td>件</td>
+                <td>百度</td>
+                <td>5</td>
+                <td>55</td>
+                <td>未付款</td>
+                <td>2018</td>
+                <td>
+                    <a href="#"><img src="../imgs/read.png" alt="查看" title="查看"/></a>
+                    <a href="#" data-toggle="modal" data-target="#xiugaiPosModal"><img src="../imgs/xiugai.png" alt="修改" title="修改"/></a>
+                    <a href="#" class="removeBill"><img src="../imgs/schu.png" alt="删除" title="删除"/></a>
+                </td>
+            </tr>-->
+            <!--<tr>
+                <td>2</td>
+                <td>商品</td>
+                <td>件</td>
+                <td>百度</td>
+                <td>5</td>
+                <td>55</td>
+                <td>未付款</td>
+                <td>2018</td>
+                <td>
+                    <a href="#"><img src="../imgs/read.png" alt="查看" title="查看"/></a>
+                    <a href="#" data-toggle="modal" data-target="#xiugaiPosModal"><img src="../imgs/xiugai.png" alt="修改" title="修改"/></a>
+                    <a href="#" class="removeBill"><img src="../imgs/schu.png" alt="删除" title="删除"/></a>
+                </td>
+            </tr>-->
+        </table>
+    </div>
+</section>
+
+<!--点击删除按钮后弹出的页面-->
+<div class="zhezhao"></div>
+<div class="remove" id="removeBi" style="display: none;">
+    <div class="removerChid">
+        <h2>提示</h2>
+        <div class="removeMain">
+            <p>你确定要删除该订单吗？</p>
+            <a href="#" id="yes">确定</a>
+            <a href="#" id="no">取消</a>
+        </div>
+    </div>
+</div>
+    <!--账单管理添加模态框-->
+	<div class="modal fade" id="addzdModal" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+	        <h4 class="modal-title" id="addPosModalLabel">添加订单</h4>
+	      </div>
+	      <div class="modal-body">
+	      	<div class="alert alert-danger hidden login-error">添加失败</div>
+	        <form class="add-pos-form">
+	          <div class="form-group">
+			    <label for="addPosCompany">账单编号</label>
+			    <input type="text" class="form-control" name="id" id="addPosShangping" placeholder="请输入账单编号">
+			  </div>
+	        	
+	          <div class="form-group">
+			    <label for="addPosCompany">商品名称</label>
+			    <input type="text" class="form-control" name="shangping" id="addPosShangping" placeholder="请输入商品名称">
+			  </div>
+			  
+			  <div class="form-group">
+			    <label for="addPosName">商品单位</label>
+			    <input type="text" class="form-control" name="danwei" id="addPosDanwei" placeholder="请输入商品单位">
+			  </div>
+			  <div class="form-group">
+			    <label for="addPosSalary">商品数量</label>
+			    <input type="text" class="form-control" name="shuliang" id="addPosShuliang" placeholder="请输入商品数量">
+			  </div>
+			  <div class="form-group">
+			    <label for="addPosAddress">总金额</label>
+			    <input type="text" class="form-control" name="jine" id="addPosJine" placeholder="请输入总金额">
+			  </div>
+			  <div class="form-group">
+			    <label for="addPosAddress">供应商</label>
+			    <input type="text" class="form-control" name="gys" id="addPosGys" placeholder="请输入供应商">
+			  </div>
+			  <div class="form-group">
+			    <label for="addPosAddress">是否付款</label>
+			    <input type="text" class="form-control" name="fukuan" id="addPosFukuan" placeholder="请输入">
+			  </div>
+			  <div class="form-group">
+			    <label for="addPosAddress">时间</label>
+			    <input type="text" class="form-control" name="shijian" id="addPosShijian" placeholder="请输入创建时间">
+			  </div>
+			</form>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+	        <button type="button" class="btn btn-primary btn-add-zd">添加</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<!--账单管理修改模态框-->
+	<div class="modal fade" id="xiugaiPosModal" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+	        <h4 class="modal-title" id="addPosModalLabel">修改订单</h4>
+	      </div>
+	      <div class="modal-body">
+	      	<div class="alert alert-danger hidden login-error">修改失败</div>
+	        <form class="add-pos-form">
+	          <div class="form-group">
+			    <label for="addPosCompany">商品名称</label>
+			    <input type="text" class="form-control" name="company" id="addPosCompany" placeholder="请输入商品名称">
+			  </div>
+			  
+			  <div class="form-group">
+			    <label for="addPosName">商品单位</label>
+			    <input type="text" class="form-control" name="name" id="addPosName" placeholder="请输入商品单位">
+			  </div>
+			  <div class="form-group">
+			    <label for="addPosSalary">商品数量</label>
+			    <input type="text" class="form-control" name="salary" id="addPosSalary" placeholder="请输入商品数量">
+			  </div>
+			  <div class="form-group">
+			    <label for="addPosAddress">总金额</label>
+			    <input type="text" class="form-control" name="address" id="addPosAddress" placeholder="请输入总金额">
+			  </div>
+			  <div class="form-group">
+			    <label for="addPosAddress">供应商</label>
+			    <input type="text" class="form-control" name="address" id="addPosAddress" placeholder="请输入供应商">
+			  </div>
+			  <div class="form-group">
+			    <label for="addPosAddress">是否付款</label>
+			    <input type="text" class="form-control" name="address" id="addPosAddress" placeholder="请输入">
+			  </div>
+			  
+			</form>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+	        <button type="button" class="btn btn-primary btn-xiugai-zd">修改</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+	
+	
+	
+	
+	</div>
+	</body>
+	<script src="/lib/jquery/jquery-1.12.4.min.js"></script>
+	<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/js/common/time.js"></script>
+	<script src="/js/common/loginModal.js"></script>
+	<script src="/js/common/index.js"></script>
+	<script src="/js/common/zhangdan.js"></script>
+</html>
